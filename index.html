@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="prism.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Post Master App</title>
+
+</head>
+
+<body>
+
+  <div class="row my-0 text-white bg-danger">
+    <h3 class="col text-center p-2">Welcome to Post Master</h3>
+  </div>
+  
+  <div class="container px-5 my-5 border border-dark rounded bg-light input">
+
+    <div class="form-group row my-4">
+      <label for="url" class="col-sm-2 col-form-label">URL</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="urlField" placeholder="Enter url here">
+      </div>
+    </div>
+
+    <fieldset class="form-group mb-4">
+      <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0">Request Type</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="requestType" id="post" value="POST" checked>
+            <label class="form-check-label" for="post">
+              POST
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="requestType" id="get" value="GET">
+            <label class="form-check-label" for="get">
+              GET
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group mb-1" id = "chooseCustom">
+      <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0">Content Type</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="contentType" id="json" value="json" checked>
+            <label class="form-check-label" for="json">
+              JSON
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="contentType" id="custom" value="custom">
+            <label class="form-check-label" for="custom">
+              Custom Parameters
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="mb-4 py-0" id="parameterBox">
+      <h4 class="text-center mb-2">Enter Parameters</h4>
+      <div id="parameters">
+        <div class="form-row my-2 parameterElem">
+          <label for="url" class="col-sm-2 mr-2 col-form-label"></label>
+          <input type="text" class="col-md-4 mr-2 form-control key" placeholder="Enter key">
+          <input type="text" class="col-md-4 mr-2 form-control value" placeholder="Enter value">
+          <button class="btn btn-primary" id="addParameter">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4" id="JsonBox">
+      <h4 class="text-center mb-2">Enter JSON</h4>
+      <div class="form-group row">
+        <label for="requestJSON" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+          <textarea class="form-control" id="JsonText" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row mb-4">
+      <label for="submit" class="col-sm-2 col-form-label">Submit Request</label>
+      <div class="col-sm-10">
+        <button class="btn btn-outline-success" id="submit">Submit</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container output">
+    <h2 class="text-center mb-2">Response</h2>
+    <div class="my-3" id="responseBox">
+      <div class="form-group" data-prismjs-copy-timeout='500'>
+        <pre class="language-javascript" style="min-height: 200px; max-height: 700px;"><code class="language-javascript" id = "responsePrism"></code></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  
+  <script src="index.js"></script>
+
+  <script src="prism.js"></script>
+
+</body>
+
+</html>
